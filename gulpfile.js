@@ -3,4 +3,4 @@ const requireDir = require('require-dir');
 
 requireDir('./tools/build', {recurse: false});
 
-gulp.task('default', ['build:thirdParty'])
+gulp.task('default', ['build:dependencies', 'build:app'])

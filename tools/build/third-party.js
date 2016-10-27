@@ -13,9 +13,9 @@ var thirdPartyJs = [
 
 var production = process.env.NODE_ENV == 'production';
 
-gulp.task('build:thirdParty', function(){
+gulp.task('build:thirdPartyLib', function(){
     return gulp.src(thirdPartyJs)
-        .pipe(concat('thirdPartyJs.js'))
+        .pipe(concat('bundle.js'))
         .pipe(gulpif(production, uglify({mangle: false})))
         .pipe(gulp.dest('./app/public/js/dist'))
 })
